@@ -1,14 +1,12 @@
 #include<bits/stdc++.h>
 using namespace std;
 
-// Structure to represent a book
 struct Book {
     string title;
     string author;
     int id;
 };
 
-// Function prototypes
 void add(Book library[], int& count);
 void display(const Book library[], int count);
 void search(const Book library[], int count, const string& title);
@@ -39,7 +37,7 @@ int main() {
                 {
                     string searchTitle;
                     cout << "Enter the title to search: ";
-                    cin.ignore(); // Clear input buffer
+                    cin.ignore(); 
                     getline(cin, searchTitle);
                     search(library, count, searchTitle);
                 }
@@ -56,13 +54,13 @@ int main() {
 }
 
 void add(Book library[], int& count) {
-    if (count < 100) { // Assuming a maximum of 100 books
+    if (count < 1000) { 
         cout << "Enter book title: ";
         cin.ignore(); // Clear input buffer
         getline(cin, library[count].title);
         cout << "Enter book author: ";
         getline(cin, library[count].author);
-        library[count].id = count + 1; // Assigning a simple ID
+        library[count].id = count + 1; 
         count++;
         cout << "Book added successfully.\n";
     } else {
@@ -93,7 +91,7 @@ void search(const Book library[], int count, const string& title) {
             cout << "Title: " << library[i].title << "\n";
             cout << "Author: " << library[i].author << "\n\n";
             found = true;
-            break; // Stop searching once the book is found
+            break; // 
         }
     }
 
